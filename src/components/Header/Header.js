@@ -8,9 +8,9 @@ const Header = () => {
     console.log(setLoggedInUser);
     return (
         <div>
-            <Navbar bg="light" expand="lg">
+            <Navbar bg="dark" color="white" variant="dark" expand="lg">
             <LinkContainer to="/home">
-            <Navbar.Brand>Grocary ShopBd</Navbar.Brand>
+            <Navbar.Brand>CLOVER MART</Navbar.Brand>
       </LinkContainer>
   
   <Navbar.Toggle aria-controls="basic-navbar-nav" />

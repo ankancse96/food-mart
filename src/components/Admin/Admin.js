@@ -1,7 +1,9 @@
 import axios from 'axios';
 import React from 'react';
 import { useState } from 'react';
+import { Col, Container, Nav, Navbar, Row } from 'react-bootstrap';
 import { useForm } from "react-hook-form";
+import { LinkContainer } from 'react-router-bootstrap';
 const Admin = () => {
     const { register, handleSubmit} = useForm();
     const [imageURL, setImageURL] = useState();
@@ -41,7 +43,30 @@ const Admin = () => {
     }
     return (
         <div>
+          <Container>
+            <Row>
+            <Col md={4}>
+            <Navbar bg="light" expand="lg">
+  
+  <Navbar.Toggle aria-controls="basic-navbar-nav" />
+  <Navbar.Collapse id="basic-navbar-nav">
+    <Nav className="mr-auto">
 
+      <LinkContainer to="/admin">
+      <Nav.Link>Add Product</Nav.Link>
+      </LinkContainer>
+
+      <LinkContainer to="/manageProduct">
+      <Nav.Link>Manage Product</Nav.Link>
+      </LinkContainer>
+      
+      
+    </Nav>
+    
+  </Navbar.Collapse>
+</Navbar>
+            </Col>
+            <Col md={8}>
             <h1>Add your Products</h1>
             <form onSubmit={handleSubmit(onSubmit)}>
           Product Name: <input name="name" defaultValue="Add Product" ref={register} />
@@ -50,10 +75,13 @@ const Admin = () => {
          <br/> <br/>
         Upload Image: <input name="exampleRequired" type="file" onChange={handaleAddProduct} />
         <br/> <br/>
-      
-      
-      <input type="submit" />
+
+         <input type="submit" />
     </form>
+            </Col>
+            </Row>
+          </Container>
+
         </div>
     );
 };

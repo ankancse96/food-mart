@@ -1,4 +1,5 @@
 import React , { useEffect, useState }  from 'react';
+import { Table } from 'react-bootstrap';
 
 const Order = () => {
     const [orders, setOrders] = useState([]);
@@ -13,8 +14,29 @@ const Order = () => {
             Total Order: {orders.length}
 
             {
-                orders.map(book => <li key={book._id}>Product Name: {book.name} &  Price:{book.price}$<br/> Order Date: {(new Date(book.orderDate).toDateString('dd/MM/yyyy'))} Email:{book.email}</li>)
+                orders.map(book =>
+                    
+                    <Table striped bordered hover variant="dark" key={book._id}> <thead> <tr>
+                        
+                        <th>Product Name</th>
+                        <th>Price</th>
+                        <th>Order Date</th>
+                        <th>Email</th>
+                        </tr> </thead> 
+                        
+                        <tbody>
+                        <td> {book.name} </td>
+                        <td> {book.price} </td>
+                        <td> {(new Date(book.orderDate).toDateString('dd/MM/yyyy'))} </td>
+                        <td> {book.email} </td>
+
+                        </tbody>
+                         </Table>)
             }
+
+
+
+
         </div>
     );
 };

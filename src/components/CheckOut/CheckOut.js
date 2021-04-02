@@ -1,19 +1,19 @@
 import React ,{ useContext, useEffect, useState }  from 'react';
-import { Button, Card, Col, Container, Form, Row } from 'react-bootstrap';
+import { Button, Card } from 'react-bootstrap';
 import {useParams} from 'react-router-dom'
 import Grid from '@material-ui/core/Grid';
 import DateFnsUtils from '@date-io/date-fns';
-import { Link } from 'react-router-dom/cjs/react-router-dom.min';
+
 import {
   MuiPickersUtilsProvider,
-  KeyboardTimePicker,
+  
   KeyboardDatePicker,
-  TimePickerView,
+ 
 } from '@material-ui/pickers';
-import { useHistory } from 'react-router-dom';
+
 import { UserContext } from '../../App';
-import { LinkContainer } from 'react-router-bootstrap/lib/LinkContainer';
-import OrderDetails from '../OrderDetails/OrderDetails';
+
+
 const CheckOut = () => {
     const {name} = useParams();
     const [products, setProducts] = useState({});
@@ -22,14 +22,12 @@ const CheckOut = () => {
         .then(res => res.json())
         .then(data => setProducts(data))
     }, [name])
-    console.log(products);
-   // const product = products.filter(product=>product.name === name);
-   // console.log (product);
-   // const{imageURL,price} = product[0];
-    //    console.log('this is',name,price,imageURL);
+    
+   
         
         
         const [loggedInUser, setLoggedInUser] = useContext(UserContext);
+        console.log(setLoggedInUser);
         const [selectedDate, setSelectedDate] = useState({orderDate: new Date()});
         
 

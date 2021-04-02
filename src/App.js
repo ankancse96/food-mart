@@ -14,7 +14,7 @@ import { createContext,useState } from 'react';
 import Login from "./components/Login/Login";
 import PrivateRoute from "./components/PrivateRoute/PrivateRoute";
 import Admin from "./components/Admin/Admin";
-import OrderDetails from "./components/OrderDetails/OrderDetails";
+import ManageProduct from "./components/ManageProduct/ManageProduct";
 
 export const UserContext = createContext();
 function App() {
@@ -49,6 +49,14 @@ function App() {
             </PrivateRoute>
             <Route path="/login">
               <Login />
+            </Route>
+
+            <Route path="/deal">
+              
+            </Route>
+
+            <Route path="/manageProduct">
+              <ManageProduct />
             </Route>
 
           </Switch>

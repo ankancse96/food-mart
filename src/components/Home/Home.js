@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { Row } from 'react-bootstrap';
-import fakeData from '../../fakeData/product'
+
 import Product from '../Product/Product';
 const Home = () => {
     const [products, setProducts] = useState([]);
