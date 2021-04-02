@@ -7,7 +7,7 @@ const ManageProduct = () => {
         fetch('https://peaceful-basin-07290.herokuapp.com/products')
         .then(res => res.json())
         .then(data => setProducts(data))
-    }, [])
+    }, [products])
 
     const deleteProduct = (id) => {
         console.log('click',id);
