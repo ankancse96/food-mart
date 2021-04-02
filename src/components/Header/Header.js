@@ -10,7 +10,7 @@ const Header = () => {
         <div>
             <Navbar bg="dark" color="white" variant="dark" expand="lg">
             <LinkContainer to="/home">
-            <Navbar.Brand>CLOVER MART</Navbar.Brand>
+            <Navbar.Brand>FOOD MART</Navbar.Brand>
       </LinkContainer>
   
   <Navbar.Toggle aria-controls="basic-navbar-nav" />
