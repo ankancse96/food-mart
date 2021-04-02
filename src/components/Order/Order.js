@@ -1,14 +1,17 @@
-import React , { useEffect, useState }  from 'react';
+import React ,{ useContext, useEffect, useState }  from 'react';
 import { Table } from 'react-bootstrap';
-
+import { UserContext } from "../../App";
 const Order = () => {
+    
     const [orders, setOrders] = useState([]);
-
+    const [loggedInUser,setLoggedInUser] = useContext(UserContext);
+     console.log(setLoggedInUser);
+    
     useEffect(() => {
-        fetch('https://peaceful-basin-07290.herokuapp.com/orders')
+        fetch('https://peaceful-basin-07290.herokuapp.com/orders?email=' + loggedInUser.email)
         .then(res => res.json())
         .then(data => setOrders(data))
-    }, [])
+    }, [loggedInUser.email])
     return (
         <div>
             Total Order: {orders.length}
